@@ -12,7 +12,7 @@ public class VendedorResources {
 
     @GetMapping
     public ResponseEntity<Vendedor> findAll(){
-        Vendedor v1 = new Vendedor(1L, "Maria");
-        return ResponseEntity.ok().body(v1);
+        Vendedor v = new Vendedor(1L, "Maria");
+        return ResponseEntity.ok().body(v);
     }
 }
