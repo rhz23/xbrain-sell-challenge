@@ -17,8 +17,18 @@ Uma venda é composta por id, data da venda, valor, vendedor id e vendedor nome.
 ---
 
 ### Domain Moddel utilizado para desenvolvimento:
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/70461502/155796405-7803fd24-e5e9-4e79-89ca-bee5823644ef.png" width="700" />
+</div>
  
-![image](https://user-images.githubusercontent.com/70461502/155796405-7803fd24-e5e9-4e79-89ca-bee5823644ef.png)
+---
+
+### Arquitetura basica a ser utilizada na aplicação
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/70461502/155828528-54f6d8ba-7c77-4f6c-abcf-0e5da546599e.png" width="700" />
+</div>
 
 ---
 
@@ -28,3 +38,4 @@ Uma venda é composta por id, data da venda, valor, vendedor id e vendedor nome.
   - Spring Data JPA
   - Spring Web
   - H2 Database
+  - Lombok
