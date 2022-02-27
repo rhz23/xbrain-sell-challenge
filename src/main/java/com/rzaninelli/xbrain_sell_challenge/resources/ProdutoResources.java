@@ -1,8 +1,7 @@
 package com.rzaninelli.xbrain_sell_challenge.resources;
 
-import com.rzaninelli.xbrain_sell_challenge.entities.Vendedor;
-
-import com.rzaninelli.xbrain_sell_challenge.services.VendedorService;
+import com.rzaninelli.xbrain_sell_challenge.entities.Produto;
+import com.rzaninelli.xbrain_sell_challenge.services.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,21 +12,21 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/vendedores")
-public class VendedorResources {
+@RequestMapping(value = "/produtos")
+public class ProdutoResources {
 
     @Autowired
-    private VendedorService service;
+    private ProdutoService service;
 
     @GetMapping
-    public ResponseEntity<List<Vendedor>> findAll(){
-        List<Vendedor> lista =service.findAll();
+    public ResponseEntity<List<Produto>> findAll(){
+        List<Produto> lista =service.findAll();
         return ResponseEntity.ok().body(lista);
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Vendedor> findById(@PathVariable Long id){
-        Vendedor obj = service.findById(id);
+    public ResponseEntity<Produto> findById(@PathVariable Long id){
+        Produto obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
 }
