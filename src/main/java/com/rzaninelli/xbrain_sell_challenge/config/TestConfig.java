@@ -1,8 +1,10 @@
 package com.rzaninelli.xbrain_sell_challenge.config;
 
+import com.rzaninelli.xbrain_sell_challenge.entities.ItemPedido;
 import com.rzaninelli.xbrain_sell_challenge.entities.Pedido;
 import com.rzaninelli.xbrain_sell_challenge.entities.Produto;
 import com.rzaninelli.xbrain_sell_challenge.entities.Vendedor;
+import com.rzaninelli.xbrain_sell_challenge.repositories.ItemPedidoRepository;
 import com.rzaninelli.xbrain_sell_challenge.repositories.PedidoRepository;
 import com.rzaninelli.xbrain_sell_challenge.repositories.ProdutoRepository;
 import com.rzaninelli.xbrain_sell_challenge.repositories.VendedorRepository;
@@ -26,6 +28,9 @@ public class TestConfig implements CommandLineRunner {
 
     @Autowired
     private ProdutoRepository produtoRepository;
+
+    @Autowired
+    private ItemPedidoRepository itemPedidoRepository;
 
 
     @Override
@@ -58,5 +63,23 @@ public class TestConfig implements CommandLineRunner {
         vendedorRepository.saveAll(Arrays.asList(v1, v2, v3));
 
         pedidoRepository.saveAll(Arrays.asList(pd1, pd2, pd3, pd4, pd5, pd6));
+
+        ItemPedido iP1 = new ItemPedido(pd1, p1, 1, p1.getPreco());
+        /*
+        ItemPedido iP2 = new ItemPedido(pd1, p2, 2, p2.getPreco());
+        ItemPedido iP3 = new ItemPedido(pd1, p3, 1, p3.getPreco());
+        ItemPedido iP4 = new ItemPedido(pd2, p6, 1, p6.getPreco());
+        ItemPedido iP5 = new ItemPedido(pd3, p8, 1, p8.getPreco());
+        ItemPedido iP6 = new ItemPedido(pd3, p9, 1, p9.getPreco());
+        ItemPedido iP7 = new ItemPedido(pd4, p5, 1, p5.getPreco());
+        ItemPedido iP8 = new ItemPedido(pd5, p4, 10, p4.getPreco());
+        ItemPedido iP9 = new ItemPedido(pd6, p7, 1, p7.getPreco());
+        ItemPedido iP10 = new ItemPedido(pd6, p3, 1, p3.getPreco());
+        ItemPedido iP11 = new ItemPedido(pd6, p10, 1, p10.getPreco());
+
+         */
+
+        //itemPedidoRepository.saveAll(Arrays.asList(iP1, iP2, iP3, iP4, iP5, iP6, iP6, iP7, iP8, iP9, iP10));
+        itemPedidoRepository.saveAll(Arrays.asList(iP1));
     }
 }
