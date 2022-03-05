@@ -10,12 +10,12 @@ import java.util.Map;
 
 public class VendedorResponseHandler {
 
-    public static ResponseEntity<Object> generateResponse(Vendedor vendedor, Instant startDate, Instant endDate, HttpStatus status){
+    public static ResponseEntity<Object> generateResponse(Vendedor vendedor, Instant dataInicial, Instant dataFinal, HttpStatus status){
         Map<String, Object> map = new LinkedHashMap<>();
         map.put("id", vendedor.getId());
-        map.put("name", vendedor.getNome());
-        map.put("Sales amount", vendedor.getTotalPedidos(startDate, endDate));
-        map.put("Average Daily Sells", vendedor.getMediaDiariaPedidos(startDate, endDate));
+        map.put("nome", vendedor.getNome());
+        map.put("Total de vendas", vendedor.getTotalPedidos(dataInicial, dataFinal));
+        map.put("Média de vendas diarias ", vendedor.getMediaDiariaPedidos(dataInicial, dataFinal));
 
         return new ResponseEntity<Object>(map, status);
     }

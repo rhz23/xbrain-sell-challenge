@@ -62,8 +62,8 @@ public class Vendedor implements Serializable {
     public Double getMediaDiariaPedidos (Instant dataInicial, Instant dataFinal){
         Long dias =  dataInicial.until(dataFinal, ChronoUnit.DAYS);
         Long vendas = vendasPorTempo(dataInicial, dataFinal);
-        Double mediaDiaria = Double.valueOf(vendas)/dias;
-        return mediaDiaria;
+        Double mediaDiaria =  Double.valueOf(vendas)/dias;
+        return Math.round(mediaDiaria*100.00)/100.00;
     }
 
     private Long vendasPorTempo(Instant dataInicial, Instant dataFinal) {

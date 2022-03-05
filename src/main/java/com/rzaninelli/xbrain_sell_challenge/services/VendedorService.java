@@ -25,7 +25,7 @@ public class VendedorService {
 
     public Vendedor findById(Long id){
         Optional<Vendedor> obj = repository.findById(id);
-        return obj.get();
+        return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
 
     public Vendedor insert(Vendedor vendedor){
@@ -52,7 +52,7 @@ public class VendedorService {
         }
     }
 
-    private void updateData(Vendedor entity, Vendedor seller) {
-        entity.setNome(seller.getNome());
+    private void updateData(Vendedor entity, Vendedor vendedor) {
+        entity.setNome(vendedor.getNome());
     }
 }
