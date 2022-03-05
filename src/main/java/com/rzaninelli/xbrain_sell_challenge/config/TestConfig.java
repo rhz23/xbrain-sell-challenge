@@ -65,7 +65,6 @@ public class TestConfig implements CommandLineRunner {
         pedidoRepository.saveAll(Arrays.asList(pd1, pd2, pd3, pd4, pd5, pd6));
 
         ItemPedido iP1 = new ItemPedido(pd1, p1, 1, p1.getPreco());
-        /*
         ItemPedido iP2 = new ItemPedido(pd1, p2, 2, p2.getPreco());
         ItemPedido iP3 = new ItemPedido(pd1, p3, 1, p3.getPreco());
         ItemPedido iP4 = new ItemPedido(pd2, p6, 1, p6.getPreco());
@@ -77,9 +76,6 @@ public class TestConfig implements CommandLineRunner {
         ItemPedido iP10 = new ItemPedido(pd6, p3, 1, p3.getPreco());
         ItemPedido iP11 = new ItemPedido(pd6, p10, 1, p10.getPreco());
 
-         */
-
-        //itemPedidoRepository.saveAll(Arrays.asList(iP1, iP2, iP3, iP4, iP5, iP6, iP6, iP7, iP8, iP9, iP10));
-        itemPedidoRepository.saveAll(Arrays.asList(iP1));
+        itemPedidoRepository.saveAll(Arrays.asList(iP1, iP2, iP3, iP4, iP5, iP6, iP6, iP7, iP8, iP9, iP10));
     }
 }

@@ -64,11 +64,18 @@ public class Pedido implements Serializable {
     public void setItens(Set<ItemPedido> itens) {
         this.itens = itens;
     }
-
      */
 
     public Set<ItemPedido> getItens(){
         return itens;
+    }
+
+    public Double getTotal(){
+        Double soma = 0.0;
+        for(ItemPedido x : itens){
+            soma += x.getSubTotal();
+        }
+        return soma;
     }
 
     @Override
