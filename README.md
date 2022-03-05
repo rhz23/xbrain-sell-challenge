@@ -38,4 +38,37 @@ Uma venda é composta por id, data da venda, valor, vendedor id e vendedor nome.
   - Spring Data JPA
   - Spring Web
   - H2 Database
-  - Lombok
+
+---
+### Formatos de Requisições GET e POST:
+
+- Buscar Pedidos:
+  - http://localhost:8080/pedidos
+  - http://localhost:8080/pedidos/{id}
+
+- Criar novo Pedido (Venda):
+  - http://localhost:8080/pedidos
+  - JSON Body: 
+ ```json
+{
+    "vendedor": {
+        "id": 1
+    },
+    "itens": [
+        {
+            "quantidade": 1,
+            "produto": {
+                "id": 4
+            }
+        }
+    ]
+}
+```
+- Buscar Vendedores:
+  - http://localhost:8080/vendedores
+  - http://localhost:8080/vendedores/{id}
+
+- Buscar Vendedor com informacóes de total e média de vendas diária dentro de período informado:
+  - http://localhost:8080/vendedores/1/dataInicial={yyyy-MM-dd}/dataFinal={yyyy-MM-dd}
+  - exemplo:
+    - http://localhost:8080/vendedores/1/dataInicial=2021-02-20/dataFinal=2021-05-05
